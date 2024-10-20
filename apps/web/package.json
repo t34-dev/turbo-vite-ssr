@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node server",
-    "build": "vite build && vite build --ssr src/entry-server.tsx && vite-plugin-ssr prerender && cp ../../api/server.mjs dist/server.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.tsx && cp ../../api/server.mjs dist/server.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
