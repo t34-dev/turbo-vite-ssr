@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "apps/web/package.json",
+      "src": "apps/web/server.js",
       "use": "@vercel/node",
       "config": {
         "buildCommand": "cd apps/web && npm run build"
