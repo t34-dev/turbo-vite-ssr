@@ -1,6 +1,5 @@
-import s from './ButtonX.module.scss';
+import styles from './ButtonX.module.scss';
 
 export const ButtonX = () => {
-  return <button className={s.root}>UI ButtonX</button>;
+  return <button className={styles.root}>UI ButtonX</button>;
 };
-

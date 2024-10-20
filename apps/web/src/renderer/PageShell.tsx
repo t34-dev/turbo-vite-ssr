@@ -1,4 +1,5 @@
 import React from 'react';
+import "./style.css"
 import { PageContextProvider } from './usePageContext';
 import type { PageContext } from './types';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
