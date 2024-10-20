@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "cd apps/web && pnpm run build",
+  "buildCommand": "pnpm turbo run build",
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install",
   "rewrites": [
     {
       "source": "/((?!assets/).*)",
-      "destination": "/apps/web/server/index.js"
+      "destination": "/server/index.js"
     }
   ]
 }
