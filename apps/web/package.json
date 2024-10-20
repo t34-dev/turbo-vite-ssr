@@ -7,6 +7,7 @@
     "dev": "node server",
     "build": "vite build && vite build --ssr src/entry-server.tsx",
     "lint": "eslint .",
+    "serve": "node server.js",
     "preview": "vite preview"
   },
   "dependencies": {

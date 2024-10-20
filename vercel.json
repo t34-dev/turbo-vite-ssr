@@ -1,6 +1,20 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/server" }],
-  "buildCommand": "cd apps/web && pnpm run build",
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/web/package.json",
+      "use": "@vercel/node",
+      "config": {
+        "buildCommand": "cd apps/web && npm run build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "apps/web/server.js"
+    }
+  ],
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install"
 }
