@@ -2,6 +2,7 @@ import ReactDOMServer from 'react-dom/server';
 import { PageShell } from './PageShell';
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr/server';
 import type { PageContextServer } from './types';
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 
 export { render };
 export { passToClient };
@@ -9,11 +10,15 @@ export { passToClient };
 const passToClient = ['pageProps', 'urlPathname'];
 
 async function render(pageContext: PageContextServer) {
+  const queryClient = new QueryClient()
+
   const { Page, pageProps } = pageContext;
   const pageHtml = ReactDOMServer.renderToString(
+    <QueryClientProvider client={queryClient}>
     <PageShell pageContext={pageContext}>
       <Page {...pageProps} />
     </PageShell>
+    </QueryClientProvider>
   );
 
   const { documentProps } = pageContext.exports;
