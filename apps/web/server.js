@@ -1,13 +1,9 @@
 import express from 'express';
 import { createServer as createViteServer } from 'vite';
 import { renderPage } from 'vite-plugin-ssr/server';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
 
 const isProduction = process.env.NODE_ENV === 'production';
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const root = __dirname;
+const root = process.cwd();
 
 startServer();
 
@@ -15,7 +11,7 @@ async function startServer() {
     const app = express();
 
     if (isProduction) {
-        app.use(express.static(join(root, 'dist/client')));
+        app.use(express.static(`${root}/dist/client`));
     } else {
         const viteServer = await createViteServer({
             root,

@@ -1,5 +1,6 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/api/server" }],
   "outputDirectory": "apps/web/dist",
-  "buildCommand": "cd apps/web && npm run build"
+  "buildCommand": "cd apps/web && npm run build",
+  "devCommand": "cd apps/web && npm run dev"
 }

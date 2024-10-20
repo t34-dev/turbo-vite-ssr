@@ -1,23 +1,23 @@
 import { createServer } from 'http';
 import { renderPage } from 'vite-plugin-ssr/server';
-import { createApp } from '../apps/web/server';
 
-const app = createApp();
+export default async function handler(req, res) {
+    const { method, url, headers } = req;
+    const pageContextInit = {
+        urlOriginal: url,
+        method,
+        headers,
+    };
+    const pageContext = await renderPage(pageContextInit);
+    const { httpResponse } = pageContext;
 
-export default function handler(req, res) {
-    const server = createServer(app);
-    server.listen(0, () => {
-        const { port } = server.address();
-        fetch(`http://localhost:${port}${req.url}`, {
-            method: req.method,
-            headers: req.headers,
-            body: req.body,
-        }).then((response) => {
-            res.statusCode = response.status;
-            response.headers.forEach((value, key) => {
-                res.setHeader(key, value);
-            });
-            return response.body.pipe(res);
-        });
-    });
+    if (!httpResponse) {
+        res.statusCode = 404;
+        res.end();
+        return;
+    }
+
+    const { body, statusCode, contentType, headers: responseHeaders } = httpResponse;
+    res.writeHead(statusCode, { ...responseHeaders, 'Content-Type': contentType });
+    res.end(body);
 }
