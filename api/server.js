@@ -1,5 +1,6 @@
 import { createServer } from 'http';
-import { renderPage } from 'vite-plugin-ssr/server';
+import { renderPage } from 'vite-plugin-ssr/server'
+
 
 export default async function handler(req, res) {
     const { method, url, headers } = req;
