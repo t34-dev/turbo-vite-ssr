@@ -1,21 +1,23 @@
 {
   "version": 2,
-  "rewrites": [{ "source": "/(.*)", "destination": "apps/web/server.js" }],
-  "builds": [
+  "buildCommand": "pnpm turbo run build --filter=web...",
+  "outputDirectory": "apps/web/dist",
+  "installCommand": "pnpm install",
+  "framework": "vite",
+  "rewrites": [
     {
-      "src": "apps/web/package.json",
-      "use": "@vercel/node",
-      "config": {
-        "buildCommand": "cd apps/web && npm pnpm build"
-      }
+      "source": "/((?!assets/).*)",
+      "destination": "/server/index.js"
     }
   ],
   "routes": [
     {
+      "src": "/assets/(.*)",
+      "dest": "/client/assets/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "apps/web/server.js"
+      "dest": "/server/index.js"
     }
-  ],
-  "outputDirectory": "apps/web/dist",
-  "installCommand": "pnpm install"
+  ]
 }
