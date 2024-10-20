@@ -8,15 +8,5 @@
       "source": "/((?!assets/).*)",
       "destination": "/apps/web/server/index.js"
     }
-  ],
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/client/assets/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/server/index.js"
-    }
   ]
 }
