@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      vite-plugin-ssr:
+        specifier: ^0.4.142
+        version: 0.4.142(vite@5.4.9(@types/node@20.16.5)(sass@1.80.3))
     devDependencies:
       prettier:
         specifier: ^3.2.5

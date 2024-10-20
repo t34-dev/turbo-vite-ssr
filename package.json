@@ -7,6 +7,9 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+  "dependencies": {
+    "vite-plugin-ssr": "^0.4.142"
+  },
   "devDependencies": {
     "prettier": "^3.2.5",
     "turbo": "^2.2.1",
