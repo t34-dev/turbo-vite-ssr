@@ -1,8 +1,8 @@
 import { createServer } from 'http';
-import { renderPage } from 'vite-plugin-ssr/server'
+const { renderPage } = require('vite-plugin-ssr/server');
 
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     const { method, url, headers } = req;
     const pageContextInit = {
         urlOriginal: url,

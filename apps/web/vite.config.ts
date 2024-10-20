@@ -4,4 +4,7 @@ import ssr from 'vite-plugin-ssr/plugin';
 
 export default defineConfig({
   plugins: [react(), ssr()],
+  ssr: {
+    noExternal: ['vite-plugin-ssr']
+  }
 });
