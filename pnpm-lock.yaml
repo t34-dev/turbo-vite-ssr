@@ -39,6 +39,9 @@ importers:
       ui:
         specifier: workspace:*
         version: link:../../packages/ui
+      vite-plugin-ssr:
+        specifier: ^0.4.142
+        version: 0.4.142(vite@5.4.9(@types/node@20.16.5)(sass@1.80.3))
       zustand:
         specifier: ^5.0.0
         version: 5.0.0(@types/react@18.3.11)(react@18.3.1)
@@ -79,9 +82,6 @@ importers:
       vite:
         specifier: ^5.4.8
         version: 5.4.9(@types/node@20.16.5)(sass@1.80.3)
-      vite-plugin-ssr:
-        specifier: ^0.4.142
-        version: 0.4.142(vite@5.4.9(@types/node@20.16.5)(sass@1.80.3))
 
   packages/ui:
     devDependencies:
