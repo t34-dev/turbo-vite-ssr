@@ -6,5 +6,10 @@ export default defineConfig({
   plugins: [react(), ssr()],
   ssr: {
     noExternal: ['vite-plugin-ssr']
+  },
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly'
+    }
   }
 });
