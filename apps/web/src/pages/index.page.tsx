@@ -1,9 +1,9 @@
 import { Button } from 'ui';
 import { useStore } from '../store';
 import { useQuery } from '@tanstack/react-query';
-import {ButtonX} from "../components/ButtonX/ButtonX.tsx";
+import { ButtonX } from "../components/ButtonX/ButtonX.tsx";
 
-export function Page() {
+export function Page({ initialData }: { initialData?: any }) {
   const count = useStore((state) => state.count);
   const increment = useStore((state) => state.increment);
 
@@ -13,7 +13,8 @@ export function Page() {
       console.log('SENDING REQUEST...');
       const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
       return res.json();
-    }
+    },
+    initialData: initialData
   });
 
   return (
