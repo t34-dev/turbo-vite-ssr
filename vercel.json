@@ -1,12 +1,17 @@
 {
   "version": 2,
-  "buildCommand": "pnpm turbo run build",
+  "buildCommand": "pnpm turbo run build --filter=web...",
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install",
-  "rewrites": [
+  "framework": "vite",
+  "routes": [
     {
-      "source": "/((?!assets/).*)",
-      "destination": "/server/index.js"
+      "src": "/assets/(.*)",
+      "dest": "/client/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/server/myindex.js"
     }
   ]
 }
