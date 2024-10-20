@@ -9,6 +9,7 @@ export function Page() {
   const { data, isLoading } = useQuery({
     queryKey: ['example'],
     queryFn: async () => {
+      console.log('SENDING REQUEST...');
       const res = await fetch('https://jsonplaceholder.typicode.com/todos/1');
       return res.json();
     }
@@ -16,7 +17,7 @@ export function Page() {
 
   return (
     <div>
-      <h1>Welcome to Turbo + Vite + SSR + React + TS + SCSS + Zustand + React Query</h1>
+      <h1>Welcome to Turbo + Vite + SSR + React + TS + SCSS + Zustand + React Query!!!</h1>
       <Button />
       <p>Count: {count}</p>
       <button onClick={increment}>Increment</button>

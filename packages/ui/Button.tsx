@@ -1,4 +1,6 @@
+import s from './Button.module.scss';
 
 export const Button = () => {
-  return <button>UI Button!!!</button>;
+  return <button className={s.root}>UI Button!!!</button>;
 };
+
