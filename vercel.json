@@ -1,11 +1,12 @@
 {
   "version": 2,
+  "rewrites": [{ "source": "/(.*)", "destination": "apps/web/server.js" }],
   "builds": [
     {
-      "src": "apps/web/server.js",
+      "src": "apps/web/package.json",
       "use": "@vercel/node",
       "config": {
-        "buildCommand": "cd apps/web && npm run build"
+        "buildCommand": "cd apps/web && npm pnpm build"
       }
     }
   ],
