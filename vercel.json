@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "buildCommand": "pnpm turbo run build",
+  "buildCommand": "cd apps/web && pnpm run build",
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install",
-  "framework": "vite",
   "rewrites": [
     {
       "source": "/((?!assets/).*)",
-      "destination": "/server/index.js"
+      "destination": "/apps/web/server/index.js"
     }
   ],
   "routes": [
