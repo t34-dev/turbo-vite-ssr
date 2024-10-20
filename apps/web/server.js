@@ -9,7 +9,6 @@ startServer();
 
 async function startServer() {
     const app = express();
-
     if (isProduction) {
         app.use(express.static(`${root}/dist/client`));
     } else {
