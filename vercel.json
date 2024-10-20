@@ -1,3 +1,4 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/server" }]
+  "rewrites": [{ "source": "/(.*)", "destination": "/api/server" }],
+  "outputDirectory": "apps/web/dist/client"
 }
