@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "pnpm turbo run build --filter=web...",
+  "buildCommand": "pnpm turbo run build",
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install",
   "framework": "vite",
