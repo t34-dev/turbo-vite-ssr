@@ -1,6 +1,7 @@
 import { Button } from 'ui';
 import { useStore } from '../store';
 import { useQuery } from '@tanstack/react-query';
+import {ButtonX} from "../components/ButtonX/ButtonX.tsx";
 
 export function Page() {
   const count = useStore((state) => state.count);
@@ -18,6 +19,7 @@ export function Page() {
   return (
     <div>
       <h1>Welcome to Turbo + Vite + SSR + React + TS + SCSS + Zustand + React Query!!!</h1>
+      <ButtonX />
       <Button />
       <p>Count: {count}</p>
       <button onClick={increment}>Increment</button>
