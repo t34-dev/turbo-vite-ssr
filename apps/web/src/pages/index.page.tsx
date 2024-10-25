@@ -2,7 +2,8 @@ import { Button } from 'ui';
 import { useStore } from '../store';
 import { useQuery } from '@tanstack/react-query';
 import { ButtonX } from "../components/ButtonX/ButtonX.tsx";
-import viteLogo from "*.svg";
+import viteLogo from '/vite.svg'
+import viteLogo2 from '/test/vite.svg'
 
 export function Page({ initialData }: { initialData?: any }) {
   const count = useStore((state) => state.count);
@@ -20,8 +21,14 @@ export function Page({ initialData }: { initialData?: any }) {
 
   return (
     <div>
-      <img src={viteLogo} className="logo" alt="Vite logo"/>
-      <img src='/vite.svg' className="logo" alt="Vite logo"/>
+      <div>
+        <img src={viteLogo} className="logo" alt="Vite logo"/>
+        <img src={viteLogo2} className="logo" alt="Vite logo"/>
+      </div>
+      <div>
+        <img src='/vite.svg' className="logo" alt="Vite logo"/>
+        <img src='/test/vite.svg' className="logo" alt="Vite logo"/>
+      </div>
       <h1>Welcome to Turbo + Vite + SSR + React + TS + SCSS + Zustand + React Query!!!</h1>
       <ButtonX/>
       <Button/>
