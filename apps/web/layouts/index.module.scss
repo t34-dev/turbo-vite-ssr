@@ -1,4 +1,24 @@
 .wrap{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.content{
     background: #ddd;
     flex: 1 1 auto;
+}
+.header{
+    background: #ddd;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
+    gap: 1rem;
+    &__logo{}
+    &__user{
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: flex-end;
+    }
 }
