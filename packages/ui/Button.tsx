@@ -1,6 +1,11 @@
 import s from './Button.module.scss';
+import {ButtonHTMLAttributes, FC, PropsWithChildren} from "react";
 
-export const Button = () => {
-  return <button className={s.root}>UI Button!!!</button>;
+interface ButtonProps extends PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>{
+
+}
+
+export const Button:FC<ButtonProps> = ({children, ...rest}) => {
+  return <button className={s.root} {...rest}>{children}</button>;
 };
 
