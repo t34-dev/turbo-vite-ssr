@@ -1,5 +1,5 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/api/server" }],
+  "rewrites": [{ "source": "/((?!assets/).*)", "destination": "/api/server" }],
   "buildCommand": "cd apps/web && pnpm run build",
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install"
