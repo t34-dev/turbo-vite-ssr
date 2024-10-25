@@ -1,6 +1,8 @@
 import React from "react";
 import { SignedOut, SignInButton } from "@clerk/clerk-react";
 import { Button } from "ui";
+import CustomSignIn from "../../components/AuthForm2/AuthForm2";
+import { AuthForm } from "../../components/AuthForm/AuthForm";
 
 export default function Page() {
   return (
@@ -12,6 +14,12 @@ export default function Page() {
           <Button>Войти</Button>
         </SignInButton>
       </SignedOut>
+
+      <hr />
+      <CustomSignIn />
+      <AuthForm />
+      <hr />
+
       <ul>
         <li>Rendered to HTML.</li>
       </ul>

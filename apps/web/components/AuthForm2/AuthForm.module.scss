@@ -1,0 +1,13 @@
+.wrap{
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin: 20px;
+}
+.list{
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  & > button{
+    background: #ddd;
+  }
+}
