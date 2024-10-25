@@ -9,7 +9,9 @@
     "postinstall": "pnpm run -r install"
   },
   "dependencies": {
-    "vite-plugin-ssr": "^0.4.142"
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "vike": "^0.4.199"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
